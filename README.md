@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Monthly Cost Calculator - Research Milestone
 An interactive web application created for Carolina Cribs
 ## App Functionality
@@ -17,3 +18,6 @@ Spring Boot makes it easier to create a Java web application because it provides
 3. Run:
 ```powershell
 .\mvnw.cmd spring-boot:run
+=======
+# carolina-cribs-research
+>>>>>>> cd25948c6572b7e1f146544e160bc4563d71fafe
