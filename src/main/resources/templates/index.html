@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carolina Cribs Cost Calculator</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+    <main class="calculator-card">
+        <p class="eyebrow">CAROLINA CRIBS</p>
+        <h1>Monthly Cost Calculator</h1>
+        <p class="intro">
+            Estimate the total monthly cost of an off-campus apartment.
+        </p>
+
+        <form action="/calculate" method="post">
+            <label for="apartmentName">Apartment name</label>
+            <input id="apartmentName" name="apartmentName" type="text"
+                   placeholder="Example: Park Place" required>
+
+            <label for="baseRent">Base monthly rent</label>
+            <input id="baseRent" name="baseRent" type="number"
+                   min="0" step="0.01" placeholder="1000" required>
+
+            <label for="parkingFee">Monthly parking fee</label>
+            <input id="parkingFee" name="parkingFee" type="number"
+                   min="0" step="0.01" placeholder="50" required>
+
+            <label for="utilitiesFee">Monthly utilities fee</label>
+            <input id="utilitiesFee" name="utilitiesFee" type="number"
+                   min="0" step="0.01" placeholder="120" required>
+
+            <button type="submit">Calculate Monthly Cost</button>
+        </form>
+
+        <p class="error" th:if="${error}" th:text="${error}"></p>
+
+        <section class="result" th:if="${total}">
+            <p>Estimated monthly cost for</p>
+            <h2 th:text="${apartmentName}"></h2>
+            <strong th:text="${total} + ' / month'"></strong>
+        </section>
+    </main>
+</body>
+</html>
